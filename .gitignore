@@ -1,0 +1,22 @@
+node_modules
+dist
+coverage
+*.log
+.DS_Store
+
+# env
+.env
+.env.*
+!.env.example
+
+# playwright
+test-results
+playwright-report
+blob-report
+playwright/.cache
+
+# editors
+.idea
+.vscode/*
+!.vscode/extensions.json
+*.sw?
