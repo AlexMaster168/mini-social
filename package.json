@@ -1,0 +1,42 @@
+{
+  "name": "mini-social",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Mini Social — a small production-ready social network: Vue 3 + Express 5 + PostgreSQL",
+  "license": "MIT",
+  "packageManager": "pnpm@12.10.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter \"./apps/*\" dev",
+    "build": "pnpm --filter \"./apps/*\" build",
+    "start": "pnpm --filter @mini-social/server start",
+    "db:generate": "pnpm --filter @mini-social/server db:generate",
+    "db:migrate": "pnpm --filter @mini-social/server db:migrate",
+    "db:seed": "pnpm --filter @mini-social/server db:seed",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc -p tsconfig.json && pnpm --filter \"./apps/*\" typecheck",
+    "test": "pnpm --filter \"./apps/*\" test",
+    "test:e2e": "playwright test",
+    "screenshots": "playwright test --config playwright.screenshots.config.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.63.0",
+    "@tsconfig/node22": "^22.0.6",
+    "@types/node": "^22.20.5",
+    "eslint": "^10.12.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.11.1",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.9",
+    "typescript": "6.0.3",
+    "typescript-eslint": "^8.71.1",
+    "vue-eslint-parser": "^10.4.1"
+  },
+  "type": "module"
+}
